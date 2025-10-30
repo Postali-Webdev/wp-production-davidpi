@@ -1,0 +1,434 @@
+/**
+ * Base styles applied regardless of the screen size
+ *
+ * @package davis
+ * @author Postali
+**/
+
+/** Text Highlighting Color **/
+::-moz-selection {
+  background:$blue; 
+}
+
+::selection {
+  background:$blue; 
+}
+
+// Hide Recaptcha badge on all pages
+.grecaptcha-badge {
+  opacity: 0;
+  display: none;
+}
+
+/** Transitions **/
+.smooth {
+    transition: .4s ease 0s;
+}
+
+/** Images */
+img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+/** Wordpress image alignment styles **/
+img.alignright { float: right; margin: 0 0 1em 1em; }
+img.alignleft { float: left; margin: 0 1em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+.alignleft, .alignright, .aligncenter, .alignnone {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/** Responsive video embeds **/
+.embed-container { 
+  position: relative; 
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+} 
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/** Vertial align? Fingers crossed **/
+.vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/** Utility classes */
+.screen-reader-text {
+  position: absolute;
+  left: -99999em;
+}
+
+.clearfix {
+  zoom: 1;
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+}
+
+.clear, .clearfix:after {
+  clear: both;
+}
+
+/* Sams design is better than Qodes containers, so we need to make another container */
+.container {
+  max-width:1400px;
+  padding:0 30px;
+  margin:0 auto;
+}
+
+/* Font Styles */ 
+h1 {
+  -webkit-animation: none !important;
+  animation: none !important;
+}
+
+h2 {
+ font-family:$serif;
+ font-size:36px;
+ font-weight:900;
+ color:$gray;
+ margin-bottom:35px;
+ line-height:125%;
+ a {
+  color:black !important;
+  text-decoration: underline;
+  &:hover {
+    color:$gold !important;
+  }
+}
+}
+
+h3 {
+  font-family:$highlight;
+  font-size:26px;
+  font-weight:600;
+  color:$gold;
+  text-transform: uppercase;
+  a {
+    text-decoration: underline;
+  }
+}
+
+h4 {
+  font-family:$highlight;
+  color:$gold;
+  font-size:22px;
+  display:inline-block;
+  margin-top:20px;
+  font-weight:bold;
+}
+
+h5 {
+ 
+}
+
+h6 {
+
+}
+
+p {
+  font-family: $sans;
+  font-size:18px;
+  line-height:28px;
+  color:$gray;
+  display:block;
+  padding:15px 0;
+}
+
+a, input[type="submit"] {
+  &:focus-visible {
+    border: solid 2px $gray;
+    border-radius: 3px;;
+  }
+}
+
+.footer_top, .hero, .title.has_background, .main_menu .inner2 .menu-item  {
+  a {
+    &:focus-visible {
+      border: solid 2px $white;
+      border-radius: 3px;
+      &.ibp {
+        border: 0;
+        .hero-cta, .sub-page-cta {
+          border: solid 2px $white;
+        }
+      }
+    }
+  }
+}
+
+.teal {
+  color:$gold;
+  display:inline;
+}
+
+ul {
+  margin: 15px 0 15px 0;
+}
+
+ul li {
+  font-family: $sans;
+  font-size:18px;
+  line-height:28px;
+  color:$gray;
+  display:block;
+  padding:0;
+  position:relative;
+  margin:0 0 0 25px;
+  &:before {
+    position:absolute;
+    left:-25px;
+    content:"•";
+    font-size:20px;
+    color:$gold;
+    top:0;
+  }
+}
+
+ul.checkmarks {
+  position:relative;
+  li {
+    margin-left:35px;
+    &:before {
+      content:"\e909";
+      font-family:icomoon;
+      font-size:20px;
+      margin-left:-11px;
+      color:$gold;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  transition: all .3s ease 0s;
+  color:$black !important;
+  &:hover {
+    color: $black !important;
+    text-decoration: underline;
+  }
+}
+
+.textpanel,
+article { // body link styles
+  p,
+  ul li,
+  ol li,
+  span {
+    a {
+      color: $black !important;
+      padding: 1px 2px;
+      font-weight: normal;
+      transition: .2s ease all;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+        background: $gold !important;
+        padding: 1px 2px;
+      }
+
+      &.ibp {
+        padding: 0;
+      }
+    }
+  }
+}
+.footer_bottom {
+  background:$gold;
+  padding: 20px 0;
+  margin: 0;
+  height:auto !important;
+  p {
+    font-family:$serif;
+    color:$white;
+    font-size: 16px;
+    text-transform:uppercase;
+    font-weight:900;
+  }
+  @media screen and (max-width: 667) {
+    padding: 20px 0 60px;
+  }
+  ul {
+    display: flex;
+    li a {
+      color: $gray !important;
+      &:hover {
+        text-decoration: underline;
+        color: $black !important;
+      }
+    }
+  }
+}
+
+/* Yoast*/
+.yoast-bc-wrap {
+  display: block;
+  margin: 0;
+  padding:0 0 10px 0;
+  position: relative;
+  p#breadcrumbs {
+    margin-bottom:0;
+  }
+  span {
+    padding:0;
+    margin:0;
+    text-transform: uppercase;
+    color:$white !important;
+    font-size:14px;
+    line-height: 16px;
+  }
+  span.breadcrumb_last {
+    color:red !important;
+  }
+  a {
+    color:$white;
+    padding:0;
+    margin:0;
+    text-transform: uppercase;
+    font-size:14px;
+    line-height: 16px;
+  }
+}
+
+#menu-icon {
+  display: block;
+  float:right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width:45px;
+  height:45px;
+  margin-top:35px;
+  margin-right:40px;
+  z-index: 10000;
+  hr {
+    width: 80%;
+      display: block;
+      border: 2px solid $blue;
+      background-color: $blue;
+      margin: 4px auto;
+      padding: 0;
+      color: $blue;
+      transition: 0.3s;
+      background:$blue;
+  }
+}
+
+#menu-icon.open hr:nth-child(1) {
+    transform: rotate(45deg) !important;
+    margin-top: 14px !important;
+}
+
+#menu-icon.open hr:nth-child(2) {
+    opacity: 0 !important;
+}
+
+#menu-icon.open hr:nth-child(3) {
+    transform: rotate(-45deg) !important;
+    margin-top: -16px !important;
+}
+
+#mobile-nav.open {
+  display: block;
+}
+
+#mobile-nav {
+  display: none;
+  position: absolute;
+  left:0;
+  list-style-type:none;
+  margin:0;
+  width:100%;
+  height:100vh;
+  background-color:rgba(0,0,0,0.75);
+  z-index: 9999; /* Why does qode so many z-indexs */
+  overflow-x:scroll;
+  ul {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    text-align:center;
+    li {
+      display: block;
+      margin:0;
+      padding:0;
+      a {
+        display: inline-block;
+        color:$white;
+        text-decoration:none;
+        text-transform:uppercase;
+        width:100%;
+        padding:15px 10px;
+        font-size:16px;
+        line-height:24px;
+        transition:0.3s ease-in-out;
+        border-bottom:1px solid rgba(0,0,0,0.5);
+        &:hover {
+          background-color:rgba(255,255,255,0.75);
+          color:$black;
+        }
+      }
+      &.current-menu-item {
+        a {
+          color:$blue;
+        }
+        ul li a {
+          color:$white;
+        }
+        ul li.current-menu-item a {
+          color:$blue !important;
+        }
+      }
+    }
+    ul {
+      display: none;
+    }
+  }
+}
+
+.pagination {
+  ul {
+    li {
+      &::before {
+        display: none;
+      }
+      &.active {
+        span {
+          background: $gold !important;
+          background-color: $gold !important;
+        }
+      }
+      a {
+        &:hover {
+          background: $gold !important;
+          background-color: $gold !important;
+          color: $gray !important;
+        }
+      }
+    }
+  }
+}

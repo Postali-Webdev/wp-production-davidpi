@@ -1,0 +1,13 @@
+.page-template-page-practice-parent {
+    .full_width {
+        section.page-section:last-of-type {
+                @include respond(tab-land) {
+                    background-size: 20% !important;
+                }
+        
+                @include respond(tab-port) {
+                    background-image: none !important;
+                }
+            }
+    }
+}

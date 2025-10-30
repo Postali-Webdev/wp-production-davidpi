@@ -1,0 +1,94 @@
+.page-template-page-practice-parent {
+    .icon-list {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 50px;
+        flex-direction: row !important;
+
+        .column-25 {
+            width: 180px;
+
+            i {
+                font-size: 9vw;
+            }
+        }
+
+        .column-75 {
+            width: auto;
+            display: block;
+
+            h3 {
+                background: #333333;
+                padding: 9px 15px;
+                line-height: 1;
+                height: -webkit-fit-content;
+                height: -moz-fit-content;
+                height: fit-content;
+                display: block;
+                color: #d9bd4b;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .accordion_holder {
+        margin: 0;
+        width: 100%;
+
+        .accordion_item {
+            font-size: 17px;
+            line-height: 125%;
+            font-family: "Lato", sans-serif;
+        }
+    }
+
+    #maurice {
+        padding-bottom: 0;
+        
+        .container {
+            background-image: url(/wp-content/uploads/2025/03/Maurice-new.png);
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            margin-bottom: -0;
+            background-size: contain;
+
+            @include respond(tab-port) {
+                background:none;
+            }
+
+            .columns {
+                .column-66 {
+                    margin-bottom: 80px;
+                }
+            }
+        }
+    }
+
+    .split-background {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        @include respond(tab-land) {
+            background:none !important;
+
+            .column-50 {
+                width: 100%;
+            }
+        }
+    }
+
+    section {
+        .container {
+            .columns {
+                * {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
